@@ -1,0 +1,249 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+}
+
+
+
+
+
+/* NAVIGATION */
+
+.navigator {
+  display: flex; /* h3와 ul을 가로로 배치 */
+  justify-content: space-between; /* h3는 좌측, ul은 우측에 배치 */
+  align-items: center; /* 수직 가운데 정렬 */
+  position: fixed; /* 스크롤 시 고정 */
+  top: 0; /* 화면 상단에 고정 */
+  width: 100%; /* 화면 전체 너비 */
+  background-color: rgba(255, 255, 255, 0.2); /* 반투명 흰색 배경 */
+  padding: 20px 20px; /* 위아래 10px, 좌우 20px 여백 */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 */
+  box-sizing: border-box; /* 패딩이 너비에 포함되도록 설정 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+  transition: background-color 0.6s ease, color 0.6s ease, padding 0.6s ease, padding-top 0.6s ease, padding-bottom 0.6s ease; /* padding-top, padding-bottom에 대한 부드러운 전환 */
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.navigator.scrolled {
+  background-color: rgba(0, 0, 0, 0.5); /* 불투명한 흰색 배경 */
+  padding-top: 15px; /* 상단 패딩 줄어듦 */
+  padding-bottom: 15px; /* 하단 패딩 줄어듦 */
+}
+
+.navigator.scrolled .nav-menu a {
+  color: white; /* 하얀색 글자 */
+}
+
+.navigator.scrolled .nav-menu a:hover {
+  color: black; /* 하얀색 글자 */
+  transition: 0.3s;
+}
+
+.navigator.scrolled .title {
+  color: white; /* 하얀색 글자 */
+}
+
+.title {
+  margin: 0; /* 기본 여백 제거 */
+  font-size: 1.5rem; /* 글씨 크기 */
+}
+
+.nav-list {
+  display: flex; /* li 요소를 가로로 배치 */
+  list-style: none; /* 기본 리스트 스타일 제거 */
+  margin: 0; /* 기본 여백 제거 */
+  padding: 0; /* 기본 여백 제거 */
+}
+
+.nav-menu {
+  margin-left: 20px; /* li 요소 간의 간격 */
+}
+
+.nav-menu>a {
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 텍스트 색상 */
+  font-size: 20px; /* 글씨 크기 */
+  font-weight: bold;
+}
+
+.nav-menu>a:hover {
+  color: #8a8a8a;
+  transition: 0.3s;
+}
+
+
+
+
+/* FRAME */
+
+.frame-white {
+  height: 900px;
+  color: black;
+}
+
+.frame-black {
+  height: 900px;
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+/* PAGE */
+
+.page {
+  margin-left: 100px;
+  margin-right: 100px;
+  opacity: 0;
+  transition: opacity 1.3s ease-in-out;
+}
+
+.page.visible {
+  opacity: 1;
+}
+
+
+
+
+
+/* HOME */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home>h1 {
+  margin-top: 160px;
+  font-size: 100px;
+  color: black;
+}
+
+.home>h2 {
+  font-size: 80px;
+  color: black;
+}
+
+
+
+/* PROFILE */
+
+#page2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#page2>h2 {
+  font-size: 60px;
+  font-family: 'Playfair Display', sans-serif
+}
+
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 600px;
+  background-color: #333333;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+
+#profile-img {
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  margin-right: 60px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info>h3 {
+  font-family: 'Inter', sans-serif
+}
+
+.profile-info>hr {
+    border: 1px solid white;
+    width: 100%;
+    margin: 0px;
+}
+
+.profile-info>p {
+  font-family: 'Noto Sans KR', sans-serif
+}
+
+
+
+
+
+/* PORTFOLIO */
+#page3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#page3>h2 {
+  font-size: 60px;
+  font-family: 'Playfair Display', sans-serif
+}
+
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 600px;
+  background-color: #f2f2f2;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+footer>h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 60px;
+  font-family: 'Playfair Display', sans-serif
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  font-family: 'Inter', sans-serif
+}
+
+.instagram {
+  text-decoration: none;
+  color: white;
+}
+
+.instagram:hover {
+  color: #8a8a8a;
+  transition: 0.3s;
+}
