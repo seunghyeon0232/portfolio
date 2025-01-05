@@ -39,7 +39,7 @@ body {
 }
 
 .navigator.scrolled .nav-menu a:hover {
-  color: black; /* 하얀색 글자 */
+  color: #333333; /* 하얀색 글자 */
   transition: 0.3s;
 }
 
