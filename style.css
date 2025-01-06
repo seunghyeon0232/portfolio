@@ -1,3 +1,4 @@
+/* 스크롤 부드럽게게 */
 html {
   scroll-behavior: smooth;
 }
@@ -6,50 +7,26 @@ body {
   margin: 0px;
 }
 
-
-
-
-
-/* NAVIGATION */
+/* NAVIGATION ---------------------------------------------------------------------------------------------------- */
+.title {
+  margin: 0;
+  font-size: 24px;
+}
 
 .navigator {
+  width: 100%; /* 화면 전체 너비 */
   display: flex; /* h3와 ul을 가로로 배치 */
   justify-content: space-between; /* h3는 좌측, ul은 우측에 배치 */
   align-items: center; /* 수직 가운데 정렬 */
   position: fixed; /* 스크롤 시 고정 */
   top: 0; /* 화면 상단에 고정 */
-  width: 100%; /* 화면 전체 너비 */
-  background-color: rgba(255, 255, 255, 0.2); /* 반투명 흰색 배경 */
   padding: 20px 20px; /* 위아래 10px, 좌우 20px 여백 */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 */
   box-sizing: border-box; /* 패딩이 너비에 포함되도록 설정 */
   z-index: 1000; /* 다른 요소 위에 표시 */
+  background-color: rgba(255, 255, 255, 0.2); /* 반투명 흰색 배경 */
   transition: background-color 0.6s ease, color 0.6s ease, padding 0.6s ease, padding-top 0.6s ease, padding-bottom 0.6s ease; /* padding-top, padding-bottom에 대한 부드러운 전환 */
   font-family: 'Playfair Display', sans-serif;
-}
-
-.navigator.scrolled {
-  background-color: rgba(0, 0, 0, 0.5); /* 불투명한 흰색 배경 */
-  padding-top: 15px; /* 상단 패딩 줄어듦 */
-  padding-bottom: 15px; /* 하단 패딩 줄어듦 */
-}
-
-.navigator.scrolled .nav-menu a {
-  color: white; /* 하얀색 글자 */
-}
-
-.navigator.scrolled .nav-menu a:hover {
-  color: #333333; /* 하얀색 글자 */
-  transition: 0.3s;
-}
-
-.navigator.scrolled .title {
-  color: white; /* 하얀색 글자 */
-}
-
-.title {
-  margin: 0; /* 기본 여백 제거 */
-  font-size: 1.5rem; /* 글씨 크기 */
 }
 
 .nav-list {
@@ -64,10 +41,10 @@ body {
 }
 
 .nav-menu>a {
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 텍스트 색상 */
   font-size: 20px; /* 글씨 크기 */
   font-weight: bold;
+  text-decoration: none; /* 밑줄 제거 */
+  color: black; /* 텍스트 색상 */
 }
 
 .nav-menu>a:hover {
@@ -75,28 +52,45 @@ body {
   transition: 0.3s;
 }
 
+/* NAVIGATOR-EVENT ---------------------------------------------------------------------------------------------------- */
+/* 페이지 스크롤 할 경우, 네비게이션 배경 색상 변경 */
+.navigator.scrolled {
+  background-color: #00000080;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
+/* 페이지 스크롤 할 경우, 타이틀 색상 변경 */
+.navigator.scrolled .title {
+  color: white;
+}
 
+/* 페이지 스크롤 할 경우, 네비게이션 글자 색상 변경 */
+.navigator.scrolled .nav-menu a {
+  color: white;
+}
 
-/* FRAME */
+/* 페이지 스크롤 할 경우, 네비게이션 글자 hover 추가 */
+.navigator.scrolled .nav-menu a:hover {
+  color: #333333;
+  transition: 0.3s;
+}
 
+/* FRAME ---------------------------------------------------------------------------------------------------- */
+/* PAGE1, PAGE3 */
 .frame-white {
   height: 900px;
   color: black;
 }
 
+/* PAGE2 */
 .frame-black {
   height: 900px;
   background-color: black;
   color: white;
 }
 
-
-
-
-
-/* PAGE */
-
+/* PAGE ---------------------------------------------------------------------------------------------------- */
 .page {
   margin-left: 100px;
   margin-right: 100px;
@@ -104,15 +98,12 @@ body {
   transition: opacity 1.3s ease-in-out;
 }
 
+/* script.js, 50% 이상 스크롤 해서 visible 클래스 추가될 경우, page 내 요소가 드러남. */
 .page.visible {
   opacity: 1;
 }
 
-
-
-
-
-/* HOME */
+/* PAGE1 ---------------------------------------------------------------------------------------------------- */
 .home {
   display: flex;
   flex-direction: column;
@@ -131,10 +122,7 @@ body {
   color: black;
 }
 
-
-
-/* PROFILE */
-
+/* PAGE2 ---------------------------------------------------------------------------------------------------- */
 #page2 {
   display: flex;
   flex-direction: column;
@@ -148,11 +136,11 @@ body {
 }
 
 .profile-section {
+  width: 1000px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1000px;
-  height: 600px;
   background-color: #333333;
 }
 
@@ -176,24 +164,22 @@ body {
 }
 
 .profile-info>h3 {
+  margin-bottom: 10px;
   font-family: 'Inter', sans-serif
 }
 
 .profile-info>hr {
-    border: 1px solid white;
-    width: 100%;
-    margin: 0px;
+  width: 100%;
+  margin: 0px;
+  border: 1px solid white;
 }
 
 .profile-info>p {
+  margin-top: 10px;
   font-family: 'Noto Sans KR', sans-serif
 }
 
-
-
-
-
-/* PORTFOLIO */
+/* PAGE3 ---------------------------------------------------------------------------------------------------- */
 #page3 {
   display: flex;
   flex-direction: column;
@@ -207,16 +193,15 @@ body {
 }
 
 .portfolio-section {
+  width: 1000px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1000px;
-  height: 600px;
   background-color: #f2f2f2;
 }
 
-/* FOOTER */
-
+/* FOOTER ---------------------------------------------------------------------------------------------------- */
 footer {
   display: flex;
   flex-direction: column;
