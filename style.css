@@ -1,4 +1,4 @@
-/* 스크롤 부드럽게게 */
+/* 스크롤 부드럽게 */
 html {
   scroll-behavior: smooth;
 }
@@ -7,44 +7,62 @@ body {
   margin: 0px;
 }
 
-/* NAVIGATION ---------------------------------------------------------------------------------------------------- */
+/* navigator ---------------------------------------------------------------------------------------------------- */
 .title {
   margin: 0;
+  text-decoration: none;
+  color: black;
   font-size: 24px;
 }
 
 .navigator {
-  width: 100%; /* 화면 전체 너비 */
-  display: flex; /* h3와 ul을 가로로 배치 */
-  justify-content: space-between; /* h3는 좌측, ul은 우측에 배치 */
-  align-items: center; /* 수직 가운데 정렬 */
-  position: fixed; /* 스크롤 시 고정 */
-  top: 0; /* 화면 상단에 고정 */
-  padding: 20px 20px; /* 위아래 10px, 좌우 20px 여백 */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 */
-  box-sizing: border-box; /* 패딩이 너비에 포함되도록 설정 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
-  background-color: rgba(255, 255, 255, 0.2); /* 반투명 흰색 배경 */
-  transition: background-color 0.6s ease, color 0.6s ease, padding 0.6s ease, padding-top 0.6s ease, padding-bottom 0.6s ease; /* padding-top, padding-bottom에 대한 부드러운 전환 */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 20px 20px;
+  box-shadow: 0px 2px 5px #0000001A;
+  box-sizing: border-box;
+  z-index: 1000;
+  background-color: #FFFFFF33;
+  transition: background-color 0.6s ease, color 0.6s ease, padding 0.6s ease, padding-top 0.6s ease, padding-bottom 0.6s ease;
   font-family: 'Playfair Display', sans-serif;
 }
 
+.navigator>h3 {
+  margin: 0px;
+}
+
+.title {
+  margin: 0;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.title:hover {
+  color: #8a8a8a;
+  transition: 0.3s;
+}
+
 .nav-list {
-  display: flex; /* li 요소를 가로로 배치 */
-  list-style: none; /* 기본 리스트 스타일 제거 */
-  margin: 0; /* 기본 여백 제거 */
-  padding: 0; /* 기본 여백 제거 */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu {
-  margin-left: 20px; /* li 요소 간의 간격 */
+  margin-left: 20px;
 }
 
 .nav-menu>a {
-  font-size: 20px; /* 글씨 크기 */
+  font-size: 20px;
   font-weight: bold;
-  text-decoration: none; /* 밑줄 제거 */
-  color: black; /* 텍스트 색상 */
+  text-decoration: none;
+  color: black;
 }
 
 .nav-menu>a:hover {
@@ -52,7 +70,7 @@ body {
   transition: 0.3s;
 }
 
-/* NAVIGATOR-EVENT ---------------------------------------------------------------------------------------------------- */
+/* navigator event ---------------------------------------------------------------------------------------------------- */
 /* 페이지 스크롤 할 경우, 네비게이션 배경 색상 변경 */
 .navigator.scrolled {
   background-color: #00000080;
@@ -63,6 +81,11 @@ body {
 /* 페이지 스크롤 할 경우, 타이틀 색상 변경 */
 .navigator.scrolled .title {
   color: white;
+}
+
+.navigator.scrolled .title:hover {
+  color: #333333;
+  transition: 0.3s;
 }
 
 /* 페이지 스크롤 할 경우, 네비게이션 글자 색상 변경 */
@@ -76,21 +99,21 @@ body {
   transition: 0.3s;
 }
 
-/* FRAME ---------------------------------------------------------------------------------------------------- */
-/* PAGE1, PAGE3 */
+/* frame ---------------------------------------------------------------------------------------------------- */
+/* page1, page3 */
 .frame-white {
   height: 900px;
   color: black;
 }
 
-/* PAGE2 */
+/* page2 */
 .frame-black {
   height: 900px;
   background-color: black;
   color: white;
 }
 
-/* PAGE ---------------------------------------------------------------------------------------------------- */
+/* page ---------------------------------------------------------------------------------------------------- */
 .page {
   margin-left: 100px;
   margin-right: 100px;
@@ -103,7 +126,7 @@ body {
   opacity: 1;
 }
 
-/* PAGE1 ---------------------------------------------------------------------------------------------------- */
+/* page1 ---------------------------------------------------------------------------------------------------- */
 .home {
   display: flex;
   flex-direction: column;
@@ -122,7 +145,7 @@ body {
   color: black;
 }
 
-/* PAGE2 ---------------------------------------------------------------------------------------------------- */
+/* page2 ---------------------------------------------------------------------------------------------------- */
 #page2 {
   display: flex;
   flex-direction: column;
@@ -179,7 +202,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif
 }
 
-/* PAGE3 ---------------------------------------------------------------------------------------------------- */
+/* page3 ---------------------------------------------------------------------------------------------------- */
 #page3 {
   display: flex;
   flex-direction: column;
@@ -196,12 +219,103 @@ body {
   width: 1000px;
   height: 600px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
 }
 
-/* FOOTER ---------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  gap: 60px;
+}
+.slide:hover .overlay {
+  opacity: 1;
+}
+.overlay p {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+.view-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.view-more-btn:hover {
+  background-color: #0056b3;
+}
+.pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.pagination button {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.pagination button.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+.pagination button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* footer ---------------------------------------------------------------------------------------------------- */
 footer {
   display: flex;
   flex-direction: column;
