@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- FONTS -->
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -21,9 +21,9 @@
 
   <body>
     <header>
-      <!-- NAVIGAOR ---------------------------------------------------------------------------------------------------- -->
+      <!-- navigator ---------------------------------------------------------------------------------------------------- -->
       <nav class="navigator">
-        <h3 class="title">My Workspace</h3>
+        <h3><a class="title" href="https://seunghyeon0232.github.io/portfolio/#page1">My Workspace</a></h3>
         <ul class="nav-list">
           <li class="nav-menu" id="menu1"><a href="#page1">HOME</a></li>
           <li class="nav-menu" id="menu2"><a href="#page2">PROFILE</a></li>
@@ -31,11 +31,10 @@
           <li class="nav-menu" id="menu4"><a href="#footer">CONTACT</a></li>
         </ul>
       </nav>
-      <script src="script.js"></script>
     </header>
 
     <section>
-      <!-- PAGE1 ---------------------------------------------------------------------------------------------------- -->
+      <!-- page1 ---------------------------------------------------------------------------------------------------- -->
       <div class="frame-white">
         <div class="page" id="page1">
           <div class="home">
@@ -46,7 +45,7 @@
         </div>
       </div>
 
-      <!-- PAGE2 ---------------------------------------------------------------------------------------------------- -->
+      <!-- page2 ---------------------------------------------------------------------------------------------------- -->
       <div class="frame-black">
         <div class="page" id="page2">
           <h2>PROFILE</h2>
@@ -69,19 +68,46 @@
         </div>
       </div>
 
-      <!-- PAGE3 ---------------------------------------------------------------------------------------------------- -->
+      <!-- page3 ---------------------------------------------------------------------------------------------------- -->
       <div class="frame-white">
         <div class="page" id="page3">
           <h2>PORTFOLIO</h2>
           <div class="portfolio-section">
             <div class="portfolio">
+            <!-- Slider Container -->
+              <div class="slider">
+                <div class="slider-track">
+                  <div class="slide">
+                    <img src="neko.jpg" alt="Portfolio Image 1">
+                    <div class="overlay">
+                      <p>포토폴리오 1</p>
+                      <a href="https://www.google.com" target="_blank" class="view-more-btn">View More</a>
+                    </div>
+                  </div>
+                  <div class="slide">
+                    <img src="neko.jpg" alt="Portfolio Image 2">
+                    <div class="overlay">
+                      <p>포토폴리오 2</p>
+                      <a href="https://www.naver.com" target="_blank" class="view-more-btn">View More</a>
+                    </div>
+                  </div>
+                  <div class="slide">
+                    <img src="neko.jpg" alt="Portfolio Image 3">
+                    <div class="overlay">
+                      <p>포토폴리오 3</p>
+                      <a href="https://www.daum.net" target="_blank" class="view-more-btn">View More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="pagination"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER ---------------------------------------------------------------------------------------------------- -->
+    <!-- footer ---------------------------------------------------------------------------------------------------- -->
     <footer id="footer">
         <h2>CONTACT</h2>
         <div class="contact-info">
@@ -90,5 +116,7 @@
           <p>Instagram : <a class="instagram" href="https://www.instagram.com/gus_0232/" target="_blank">@gus_0232</a></p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
