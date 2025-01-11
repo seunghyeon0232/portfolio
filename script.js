@@ -41,8 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderTrack = document.querySelector('.slider-track');
   const slides = document.querySelectorAll('.slide');
   const pagination = document.querySelector('.pagination');
+  const slider = document.querySelector('.slider');
 
   let currentIndex = 0;
+  let autoSlideInterval;
 
   // Create pagination buttons
   slides.forEach((_, index) => {
@@ -52,11 +54,42 @@ document.addEventListener('DOMContentLoaded', () => {
     pagination.appendChild(button);
   });
 
+  // Create left and right navigation buttons
+  const leftButton = document.createElement('button');
+  leftButton.classList.add('nav-button', 'left');
+  leftButton.innerHTML = '&#8249;'; // Left arrow
+  leftButton.addEventListener('click', () => goToSlide(currentIndex - 1));
+
+  const rightButton = document.createElement('button');
+  rightButton.classList.add('nav-button', 'right');
+  rightButton.innerHTML = '&#8250;'; // Right arrow
+  rightButton.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+  slider.appendChild(leftButton);
+  slider.appendChild(rightButton);
+
   function goToSlide(index) {
+    if (index < 0) index = slides.length - 1; // Wrap around to the last slide
+    if (index >= slides.length) index = 0; // Wrap around to the first slide
+
     sliderTrack.style.transform = `translateX(-${index * 100}%)`;
     pagination.querySelectorAll('button').forEach((btn, i) => {
-    btn.classList.toggle('active', i === index);
+      btn.classList.toggle('active', i === index);
     });
     currentIndex = index;
+    resetAutoSlide();
   }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 10000); // 3 seconds
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  startAutoSlide();
 });
