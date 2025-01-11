@@ -243,7 +243,7 @@ body {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  gap: 60px;
+  gap: 20px; /* 두 태그 사이의 간격 */
 }
 .slide:hover .overlay {
   opacity: 1;
@@ -251,12 +251,12 @@ body {
 .overlay p {
   font-size: 24px;
   color: white;
-  margin-bottom: 10px;
+  margin: 0; /* 불필요한 여백 제거 */
 }
 .view-more-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #4d4d4d;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -264,7 +264,7 @@ body {
   transition: background-color 0.3s ease;
 }
 .view-more-btn:hover {
-  background-color: #0056b3;
+  background-color: #333333;
 }
 .pagination {
   position: absolute;
@@ -289,6 +289,34 @@ body {
 }
 .pagination button:hover {
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 좌우 버튼 스타일 */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-button.left {
+  left: 10px;
+}
+
+.nav-button.right {
+  right: 10px;
 }
 
 /* footer ---------------------------------------------------------------------------------------------------- */
